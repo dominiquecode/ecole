@@ -70,3 +70,6 @@ class Inscription(models.Model):
     cours = models.ForeignKey(Cours)
     etudiants = models.ForeignKey(Etudiant)
     date_inscripion = models.DateTimeField(auto_now_add=True, auto_now=False)
+
+    def __str__(self):
+        return self.date_inscripion
