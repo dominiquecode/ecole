@@ -1,0 +1,211 @@
+[
+{
+    "model": "univ.local",
+    "pk": 1,
+    "fields": {
+        "nom": "A123"
+    }
+},
+{
+    "model": "univ.local",
+    "pk": 2,
+    "fields": {
+        "nom": "B234"
+    }
+},
+{
+    "model": "univ.local",
+    "pk": 3,
+    "fields": {
+        "nom": "C2345"
+    }
+},
+{
+    "model": "univ.local",
+    "pk": 4,
+    "fields": {
+        "nom": "D234"
+    }
+},
+{
+    "model": "univ.local",
+    "pk": 5,
+    "fields": {
+        "nom": "A543"
+    }
+},
+{
+    "model": "univ.local",
+    "pk": 6,
+    "fields": {
+        "nom": "F654"
+    }
+},
+{
+    "model": "univ.professeur",
+    "pk": 1,
+    "fields": {
+        "nom": "Kalinka",
+        "prenom": "Alain",
+        "date_naissance": "2015-12-08",
+        "code": "KAAL",
+        "local": 1
+    }
+},
+{
+    "model": "univ.professeur",
+    "pk": 2,
+    "fields": {
+        "nom": "Ducas",
+        "prenom": "Pierre",
+        "date_naissance": "2015-12-30",
+        "code": "DUCPIE",
+        "local": 3
+    }
+},
+{
+    "model": "univ.professeur",
+    "pk": 3,
+    "fields": {
+        "nom": "Lazarre",
+        "prenom": "Jean",
+        "date_naissance": "2015-12-30",
+        "code": "LAZJE",
+        "local": 3
+    }
+},
+{
+    "model": "univ.professeur",
+    "pk": 4,
+    "fields": {
+        "nom": "Cornelius",
+        "prenom": "J\u00e9r\u00e9mie",
+        "date_naissance": null,
+        "code": "CORJER",
+        "local": 6
+    }
+},
+{
+    "model": "univ.professeur",
+    "pk": 5,
+    "fields": {
+        "nom": "Francoeur",
+        "prenom": "Jeanne",
+        "date_naissance": null,
+        "code": "FRAJEA",
+        "local": 5
+    }
+},
+{
+    "model": "univ.cours",
+    "pk": 1,
+    "fields": {
+        "titre": "Math\u00e9matiques 101",
+        "code": "MAT101",
+        "professeur": 5
+    }
+},
+{
+    "model": "univ.cours",
+    "pk": 2,
+    "fields": {
+        "titre": "Philosophie",
+        "code": "PHI101",
+        "professeur": 4
+    }
+},
+{
+    "model": "univ.cours",
+    "pk": 3,
+    "fields": {
+        "titre": "G\u00e9ographie",
+        "code": "GEO101",
+        "professeur": 3
+    }
+},
+{
+    "model": "univ.cours",
+    "pk": 4,
+    "fields": {
+        "titre": "Sciences naturelles",
+        "code": "SCI101",
+        "professeur": 2
+    }
+},
+{
+    "model": "univ.cours",
+    "pk": 5,
+    "fields": {
+        "titre": "\u00c9ducation physique",
+        "code": "EDU101",
+        "professeur": 1
+    }
+},
+{
+    "model": "univ.etudiant",
+    "pk": 1,
+    "fields": {
+        "nom": "Gautron",
+        "prenom": "Dominique",
+        "date_naissance": "1952-02-01",
+        "code": "GAUDO"
+    }
+},
+{
+    "model": "univ.etudiant",
+    "pk": 2,
+    "fields": {
+        "nom": "Leboss\u00e9",
+        "prenom": "Catherine",
+        "date_naissance": "1967-01-11",
+        "code": "LEBCA"
+    }
+},
+{
+    "model": "univ.etudiant",
+    "pk": 3,
+    "fields": {
+        "nom": "Leboss\u00e9-Gautron",
+        "prenom": "Marie",
+        "date_naissance": "1998-01-03",
+        "code": "LEBMA"
+    }
+},
+{
+    "model": "univ.etudiant",
+    "pk": 4,
+    "fields": {
+        "nom": "Leboss\u00e9-Gautron",
+        "prenom": "Jeanne",
+        "date_naissance": "1995-05-17",
+        "code": "LEBJA"
+    }
+},
+{
+    "model": "univ.inscription",
+    "pk": 1,
+    "fields": {
+        "cours": 1,
+        "etudiants": 1,
+        "date_inscripion": "2015-12-29T17:39:53.224Z"
+    }
+},
+{
+    "model": "univ.inscription",
+    "pk": 2,
+    "fields": {
+        "cours": 1,
+        "etudiants": 2,
+        "date_inscripion": "2015-12-29T17:35:19.550Z"
+    }
+},
+{
+    "model": "univ.inscription",
+    "pk": 3,
+    "fields": {
+        "cours": 2,
+        "etudiants": 1,
+        "date_inscripion": "2015-12-29T17:36:08.172Z"
+    }
+}
+]

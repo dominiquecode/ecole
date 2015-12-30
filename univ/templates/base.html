@@ -1,0 +1,73 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="site de test">
+        <meta name="author" content="Dominique">
+        <link rel="icon" href="../static/univ/img/favicon.ico">
+
+        <title>Univ</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="../static/univ/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="../static/univ/css/base.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Université</a>
+                    <a class="navbar-brand" href="{% url 'inscriptions' %}">Inscriptions</a>
+                    <a class="navbar-brand" href="{% url 'programmes' %}">Programmes</a>
+                    <a class="navbar-brand" href="{% url 'admin:index' %}">Administration</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="text" placeholder="Courriel" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Mot de passe" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-success" href="{% url 'endev' %}">Inscrivez-vous</button>
+                    </form>
+                </div><!--/.navbar-collapse -->
+            </div>
+        </nav>
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h1>Université virtuelle</h1>
+                        <p>Apprendre à partir de n'importe où, n'importe quand, à votre rythme</p>
+                        <p>Un projet en Python, exclusivement!</p>
+                        <p><a class="btn btn-success btn-lg" href="{% url 'endev' %}" role="button">Accueil &raquo;</a></p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="image">
+                            <p><IMG SRC="../static/univ/img/univ.jpg" ALT="Université" TITLE="Amphithéâtre"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% block contenu %}
+
+        {% endblock %}
+        <hr>
+        {% include 'footer.html' %}
+    </body>
+</html>

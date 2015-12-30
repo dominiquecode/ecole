@@ -1,4 +1,4 @@
-"""base34 URL Configuration
+"""Ecole URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -14,11 +14,12 @@ Including another URLconf
     2. Import the include() function: from django.conf.urls import url, include
     3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import url, include
-from django.contrib import admin
-from univ import urls as univ_urls
+from django.conf.urls import url
+from univ import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include(univ_urls)),
+    url(r'^$', views.acceuil, name='accueil'),
+    url(r'^programmes', views.programmes, name="programmes"),
+    url(r'^inscriptions', views.inscription, name="inscriptions"),
+    url(r'^endev', views.endev, name="endev")
 ]

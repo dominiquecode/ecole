@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block contenu %}
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-8">
+          <p><IMG SRC="../static/univ/img/endev.jpg" ALT="En développement" TITLE="En développement"></p>
+        </div>
+        <div class="col-md-4">
+          <h2><span class="label label-success">**** EN DÉVELOPPEMENT ****</span></h2>
+            <h4>
+                <p>Cet élément du site n'est pas encore prêt!</p>
+                <p>Un peu de patience serait la bienvenue!</p>
+                <p>Un gros merci</p>
+                <p>À la prochaine</p>
+            </h4>
+            <a class="btn btn-success"  href="{% url "accueil" %}">Retour à l'accueil</a>
+        </div>
+      </div>
+    </div>
+{% endblock %}

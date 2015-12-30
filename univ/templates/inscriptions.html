@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block contenu %}
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Inscription</h2>
+          <p>les étapes à suivre</p>
+            <ul>
+                <li>Choisir un programme</li>
+                <li>Vérifier les horaires de cours</li>
+                <li>faire une demande d'inscription par programme</li>
+                <li>Attendre la confirmation de l'université</li>
+                <li>Se procurer les documents obligatoires pour les cours choisis</li>
+            </ul>
+          <p><a class="btn btn-success" href="{% url 'endev' %}" role="button">Confirmez ... &raquo;</a></p>
+        </div>
+        <div class="col-md-6">
+          <h2>Les documents nécessaires</h2>
+          <p>Choisir deux documents parmi ...</p>
+            <ul>
+                <li>Carte d'assurance sociale</li>
+                <li>Permis de conduire</li>
+                <li>Passport (obligatoire pour les étudiant-es non-résident-es)</li>
+                <li>Extrait de naissance</li>
+            </ul>
+          <p><a class="btn btn-success" href="{% url 'endev' %}" role="button">Choisir ... &raquo;</a></p>
+        </div>
+      </div>
+    </div>
+{% endblock %}
