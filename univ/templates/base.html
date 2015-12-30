@@ -9,15 +9,15 @@
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <meta name="description" content="site de test">
         <meta name="author" content="Dominique">
-        <link rel="icon" href="../static/univ/img/favicon.ico">
+        <link rel="icon" href="{% static 'univ/img/favicon.ico' %}">
 
         <title>Univ</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="../static/univ/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{% static 'univ/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="../static/univ/css/base.css" rel="stylesheet">
+        <link href="{% static 'univ/css/base.css' %}" rel="stylesheet">
 
     </head>
 
@@ -57,7 +57,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="image">
-                            <p><IMG SRC="../static/univ/img/univ.jpg" ALT="Université" TITLE="Amphithéâtre"></p>
+                            <p><IMG SRC="{% static 'univ/img/univ.jpg' %}" ALT="Université" TITLE="Amphithéâtre"></p>
                         </div>
                     </div>
                 </div>
