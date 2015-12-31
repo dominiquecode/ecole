@@ -72,4 +72,4 @@ class Inscription(models.Model):
     date_inscripion = models.DateTimeField(auto_now_add=True, auto_now=False)
 
     def __str__(self):
-        return self.date_inscripion
+        return str(self.date_inscripion)
