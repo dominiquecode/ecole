@@ -21,6 +21,22 @@ class Local(models.Model):
         return self.nom
 
 
+class Programme(models.Model):
+    nom = models.CharField(max_length=30)
+    code = models.CharField(max_length=10)
+
+    def _get_identifiant(self):
+        return "%s (%s)" % (self.nom, self.code)
+    identifiant = property(_get_identifiant)
+
+    def _get_liste_cours(self):
+        return self.cours_set.all()
+    liste_cours = property(_get_liste_cours)
+
+    def __str__(self):
+        return self.nom
+
+
 class Professeur(Personne):
     code = models.CharField(max_length=6)
     local = models.ForeignKey(Local)
@@ -41,6 +57,7 @@ class Cours(models.Model):
     titre = models.CharField(max_length=20)
     code = models.CharField(max_length=6)
     professeur = models.ForeignKey(Professeur, null=True, blank=True)
+    programme = models.ForeignKey(Programme, null=True, blank=True)
 
     class Meta:
         verbose_name_plural = 'cours'
