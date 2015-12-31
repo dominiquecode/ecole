@@ -16,3 +16,7 @@ def programmes(request):
 
 def endev(request):
     return render(request, "endev.html", {})
+
+
+def vie_courante(request):
+    return render(request, "vie_courante.html", {})

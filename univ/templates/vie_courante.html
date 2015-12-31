@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block contenu %}
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Sur le campus</h2>
+                <p>les activités offertes sur le campus sont nombreuses et ouvertes à toutes et tous.
+                    Loisirs, sports, activités culturelles, spectacles divers, vont ponctués votre
+                    session de moments inoubliables.
+                </p>
+                <img src="{% static 'univ/img/campus01.jpg' %}" alt="Campus" title="Campus"
+                height="300px" width="350px">
+
+            </div>
+            <div class="col-md-4">
+                <h2>Les jalons de session</h2>
+                <p>Les activités sociales ont lieu toute l'année. Hiver comme été, vous pourrez
+                    rencontrer vos pairs lors de manifestations festives. Les études ne sont pas tout
+                    quand même!
+                </p>
+                <img src="{% static 'univ/img/assos02.jpg' %}" alt="Campus"
+                height="300px" width="350px">
+            </div>
+            <div class="col-md-4">
+                <h2>Les assos étudiantes</h2>
+                <p>Bien performer dans vos études ne veut pas dire vivre comme un ascète. La vie sociale est une
+                    réalité de notre campus. De nombreuses activités vous sont offertes. Vous pouvez créer les votres
+                    si le coeur vous en dit..
+                </p>
+                <img src="{% static 'univ/img/assos01.jpg' %}" alt="Campus"
+                height="300px" width="350px">
+            </div>
+        </div>
+    </div>
+{% endblock %}
