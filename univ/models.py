@@ -24,6 +24,8 @@ class Local(models.Model):
 class Programme(models.Model):
     nom = models.CharField(max_length=30)
     code = models.CharField(max_length=10)
+    description = models.TextField(blank=True, null=True)
+
 
     def _get_identifiant(self):
         return "%s (%s)" % (self.nom, self.code)

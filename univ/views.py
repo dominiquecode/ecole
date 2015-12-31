@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Programme,Professeur,Cours
 
 
 # Create your views here.
@@ -20,3 +21,15 @@ def endev(request):
 
 def vie_courante(request):
     return render(request, "vie_courante.html", {})
+
+
+def organisation(request):
+    programmes = Programme.objects.all()
+    professeurs = Professeur.objects.all()
+    cours = Cours.objects.all()
+    context = {
+        "programmes": programmes,
+        "professeurs": professeurs,
+        "cours": cours,
+    }
+    return render(request, "organisation.html", context)

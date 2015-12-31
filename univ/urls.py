@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^inscriptions', views.inscription, name="inscriptions"),
     url(r'^endev', views.endev, name="endev"),
     url(r'^vie_courante', views.vie_courante, name="vie_courante"),
+    url(r'^organisation', views.organisation, name="organisation"),
 ]
