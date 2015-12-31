@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block contenu %}
     <div class="container">
@@ -22,7 +23,8 @@
                     {% endfor %}
                     <hr>
                 </div>
-                <div class="col-md-2">
+                <div class="col-lg-2">
+                    {{ prog.image.url }}
                 </div>
             {% endfor %}
         </div>
