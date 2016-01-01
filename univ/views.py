@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .models import Programme, Professeur, Cours
 from .forms import InscriptionForm
-
+from django.utils import timezone
 
 # Create your views here.
 def acceuil(request):
@@ -42,12 +42,9 @@ def inscription_form(request):
     if request.method == "POST":
         formulaire = InscriptionForm(request.POST)
         if formulaire.is_valid():
+            formulaire.date_inscription = timezone.now()
             return HttpResponseRedirect("/inscriptions_form/")
     else:
         formulaire = InscriptionForm()
 
-    # définition du context
-    context = {
-        "formulaire": formulaire,
-    }
-    return render(request, "inscription_form.html", context)
+    return render(request, "inscription_form.html", {"formulaire": formulaire})
