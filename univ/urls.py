@@ -19,9 +19,11 @@ from univ import views
 
 urlpatterns = [
     url(r'^$', views.acceuil, name='accueil'),
-    url(r'^programmes', views.programmes, name="programmes"),
-    url(r'^inscriptions', views.inscription, name="inscriptions"),
-    url(r'^endev', views.endev, name="endev"),
-    url(r'^vie_courante', views.vie_courante, name="vie_courante"),
-    url(r'^organisation', views.organisation, name="organisation"),
+    url(r'^programmes$', views.programmes, name="programmes"),
+    url(r'^programmes/organisation$', views.organisation, name="organisation"),
+    url(r'^inscriptions$', views.inscription, name="inscriptions"),
+    url(r'^inscriptions/formulaire$', views.inscription_form, name="inscription_form"),
+    url(r'^endev$', views.endev, name="endev"),
+    url(r'^vie_courante$', views.vie_courante, name="vie_courante"),
+
 ]
