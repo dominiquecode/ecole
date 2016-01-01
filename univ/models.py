@@ -25,7 +25,6 @@ class Programme(models.Model):
     nom = models.CharField(max_length=30)
     code = models.CharField(max_length=10)
     description = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='univ',width_field=30, height_field=30)
 
 
     def _get_identifiant(self):
@@ -57,7 +56,7 @@ class Professeur(Personne):
 
 
 class Cours(models.Model):
-    titre = models.CharField(max_length=20)
+    titre = models.CharField(max_length=50)
     code = models.CharField(max_length=6)
     professeur = models.ForeignKey(Professeur, null=True, blank=True)
     programme = models.ForeignKey(Programme, null=True, blank=True)
