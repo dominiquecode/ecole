@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^programmes/organisation$', views.organisation, name="organisation"),
     url(r'^inscriptions$', views.inscription, name="inscriptions"),
     url(r'^inscriptions/formulaire$', views.inscription_form, name="inscription_form"),
-    url(r'^inscription/confirmation', views.inscription_confirmation, name="inscription_confirmation"),
+    url(r'^inscriptions/confirmation$', views.inscription_confirmation, name="inscription_confirmation"),
     url(r'^endev$', views.endev, name="endev"),
     url(r'^vie_courante$', views.vie_courante, name="vie_courante"),
 
