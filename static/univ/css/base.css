@@ -1,14 +1,15 @@
 .jumbotron {
     background-color: #f28419;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
 }
 
 .image {
-    padding: 30px 12px 0px 12px;
+    padding: 0px ;
 }
 
 footer {
     background-color: #f28419;
     padding: 0px 12px;
 }
+
 
