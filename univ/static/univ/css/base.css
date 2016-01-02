@@ -3,6 +3,10 @@
     padding-bottom: 0px;
 }
 
+.jumbotron h1 {
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
 .image {
     padding: 0px ;
 }
