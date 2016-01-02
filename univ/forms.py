@@ -12,6 +12,8 @@ class InscriptionForm(forms.Form):
 
 class ListeProgrammeForm(forms.Form):
     choix_programme = Programme.objects.all()
-    liste_programme = forms.MultipleChoiceField(choices=choix_programme)
+    liste_programme = forms.ModelMultipleChoiceField(choix_programme,
+                                                     label="Liste des programmes",
+                                                     widget=forms.RadioSelect)
 
 

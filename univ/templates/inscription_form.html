@@ -13,7 +13,7 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <h4>Choix de programme</h4>
+                <h4>Sélectionnez un programme</h4>
                 <form action="{% url "endev" %}" method="post">
                     {% csrf_token %}
                     {{ formulaire_programme }}
@@ -21,7 +21,7 @@
                 </form>
             </div>
             <div class="col-md-4">
-              <h4>Choix de cours</h4>
+              <h4>Sélectionnez les cours</h4>
                 <p><a class="btn btn-danger btn-block" href="{% url 'endev' %}" role="button">Confirmez les cours</a></p>
             </div>
         </div>
