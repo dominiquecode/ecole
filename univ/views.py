@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .models import Programme, Professeur, Cours
-from .forms import InscriptionForm
+from .forms import InscriptionForm, ListeProgrammeForm
 from django.utils import timezone
 
 # Create your views here.
@@ -40,11 +40,19 @@ def organisation(request):
 def inscription_form(request):
     # vérification de la méthode et des champs de formulaire
     if request.method == "POST":
-        formulaire = InscriptionForm(request.POST)
-        if formulaire.is_valid():
-            formulaire.date_inscription = timezone.now()
+        formulaire_inscription = InscriptionForm(request.POST)
+        formulaire_programme = ListeProgrammeForm(request.POST)
+        if formulaire_inscription.is_valid() and formulaire_programme.is_valid():
+            formulaire_inscription.date_inscription = timezone.now()
             return HttpResponseRedirect("/inscriptions_form/")
-    else:
-        formulaire = InscriptionForm()
 
-    return render(request, "inscription_form.html", {"formulaire": formulaire})
+    else:
+        formulaire_inscription = InscriptionForm()
+        formulaire_programme = ListeProgrammeForm()
+
+    return render(request,
+                  "inscription_form.html",
+                  {"formulaire_inscription": formulaire_inscription,
+                   "formulaire_programme":formulaire_programme}
+
+                )

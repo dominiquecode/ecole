@@ -1,4 +1,5 @@
 from django import forms
+from .models import Programme
 
 
 class InscriptionForm(forms.Form):
@@ -7,4 +8,10 @@ class InscriptionForm(forms.Form):
     date_naissance = forms.DateField(label="Date de naissance ")
     courriel = forms.EmailField()
     date_inscription = forms.DateField(label="Date d'inscription ")
+
+
+class ListeProgrammeForm(forms.Form):
+    choix_programme = Programme.objects.all()
+    liste_programme = forms.MultipleChoiceField(choices=choix_programme)
+
 

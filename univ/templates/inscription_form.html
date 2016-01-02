@@ -8,18 +8,20 @@
                 <p><h4>Données personnelles</h4></p>
                 <form action="{% url "endev" %}" method="post">
                     {% csrf_token %}
-                    {{ formulaire.as_p }}
+                    {{ formulaire_inscription.as_p }}
                     <input type="submit" class="btn btn-success btn-block" value="Confirmez les informations">
                 </form>
             </div>
             <div class="col-md-4">
-              <h4>Choix de programme</h4>
-                <p>Récapitulation des informations d'inscription</p>
-                <p><a class="btn btn-danger btn-block" href="{% url 'endev' %}" role="button">Confirmez le programme</a></p>
+                <h4>Choix de programme</h4>
+                <form action="{% url "endev" %}" method="post">
+                    {% csrf_token %}
+                    {{ formulaire_programme }}
+                    <input type="submit" class="btn btn-success btn-block" value="Confirmez le programme">
+                </form>
             </div>
             <div class="col-md-4">
               <h4>Choix de cours</h4>
-                <p>Récapitulation des informations d'inscription</p>
                 <p><a class="btn btn-danger btn-block" href="{% url 'endev' %}" role="button">Confirmez les cours</a></p>
             </div>
         </div>
