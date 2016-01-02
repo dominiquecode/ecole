@@ -3,29 +3,39 @@
 
 {% block contenu %}
     <div class="container">
+        <h2>Les programmes proposés</h2>
+        <hr>
         <div class="row">
-            <h2>Les programmes proposés</h2>
-            <hr>
-            {% for prog in programmes %}
-                <div class="col-md-3">
-                    <ul>
-                        <li><h4>{{ prog.identifiant }}</h4></li>
-                    </ul>
-                </div>
-                <div class="col-md-7">
-                    {{ prog.description }}
-                    <h5>Cours associés</h5>
-                    {% for cour in prog.liste_cours %}
-                        <ul>
-                            <il>{{ cour.titre }} ({{ cour.professeur }})</il>
-                        </ul>
-                    {% endfor %}
-                    <hr>
-                </div>
-                <div class="col-md-2">
-                    {{ prog.image.url }}
-                </div>
-            {% endfor %}
+            <div class="col-md-3">
+                <h4>Titre</h4>
+                <hr>
+            </div>
+            <div class="col-md-5">
+                 <h4>Description</h4>
+            </div>
+            <div class="col-md-4">
+                <h4>Cours associés</h4>
+            </div>
         </div>
+        {% for prog in programmes %}
+            <div class="row">
+                    <div class="col-md-3">
+                        <ul>
+                            <li><h4>{{ prog.identifiant }}</h4></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5">
+                        {{ prog.description }}
+                        <hr>
+                    </div>
+                    <div class="col-md-4">
+                        {% for cour in prog.liste_cours %}
+                            <ul>
+                                <il>{{ cour.titre }} ({{ cour.professeur }})</il>
+                            </ul>
+                        {% endfor %}
+                    </div>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
