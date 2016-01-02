@@ -1,29 +1,39 @@
 <div class="container">
     <div class="basdepage">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-sm-4">
                 <h4>Informations</h4>
                 <p><span class="glyphicon glyphicon-warning-sign"></span> Tout le contenu de ce site est protégé
                     par les droits d'auteur. Veuillez ne pas l'oublier!</p>
                 <p><span class="fa fa-sitemap"></span> Le plan du site</p>
             </div>
-            <div class="col-lg-2">
+            <div class="col-sm-2">
                 <h4>Contact</h4>
                 <p><span class="glyphicon glyphicon-earphone"></span> 418 997-7761</p>
                 <p><span class="glyphicon glyphicon-envelope"></span> admin@tradom.ca</p>
                 <p><span class="glyphicon glyphicon-home"></span> La belle province</p>
             </div>
-            <div class="col-lg-2">
+            <div class="col-sm-2">
                 <h4>Officiel</h4>
                 <p><span class="glyphicon glyphicon-bookmark"></span> Utilisation du site</p>
                 <p><span class="glyphicon glyphicon-book"></span> Licence</p>
                 <p><span class="glyphicon glyphicon-list"></span> Légal</p>
             </div>
-            <div class="col-lg-4">
+            <div class="col-sm-4">
                 <h4>Administration</h4>
-                <p>Les données d'administration de ce site ne sont pas accessibles aux personnes
-                    non enregistrées. Veuillez demander votre enregistrement sur le site avant de tenter
-                    d'acceder aux données d'administration.<br /> Merci</p>
+                <form action="{% url 'endev' %}">
+                    <div class="input-group margin-bottom-sm">
+                        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                        <input class="form-control" type="text" placeholder="Courriel">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                        <input class="form-control" type="password" placeholder="Mot de passe">
+                    </div>
+                    <div class="input-group">
+                        <button type="submit" class="btn btn-success btn-block" href="{% url 'endev' %}">Inscrivez-vous</button>
+                    </div>
+                </form>
             </div>
         </div>
         <hr>

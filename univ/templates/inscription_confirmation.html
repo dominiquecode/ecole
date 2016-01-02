@@ -5,13 +5,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <div class="alert alert-info">
+                <div class="alert alert-success">
                     <p><h3><span class="glyphicon glyphicon-ok-sign"></span> Confirmation</h3></p>
                     <p>Votre inscription a bien été envoyée à l'administration</p>
                     <p>Vous recevrez une confirmation écrite par courriel à l'adresse que vous avez utilisée dans le formulaire</p>
                     <p>Nous vous souhaitons une bonne formation!</p>
                 </div>
-                <p><a class="btn btn-primary" href="{% url 'accueil' %}" role="button">Retour à l'accueil</a></p>
+                <p><a class="btn btn-success" href="{% url 'accueil' %}" role="button">
+                    <span class="fa fa-home pull-left"></span>Retour à l'accueil</a></p>
             </div>
             <div class="col-lg-4">
                 <img src="{% static 'univ/img/inscription_confirmation.jpg' %}" alt="Inscription" height="300px" width="500px">

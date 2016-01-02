@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="{% static 'univ/bootstrap/css/bootstrap.min.css' %}">
 
         {# lien vers FontAwesome #}
-        <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'univ/font-awesome/css/font-awesome.min.css' %}">
 
         <!-- Custom styles for this template -->
         <link href="{% static 'univ/css/base.css' %}" rel="stylesheet">
@@ -32,20 +32,9 @@
                     <a class="navbar-brand" href="/">Université</a>
                     <a class="navbar-brand" href="{% url 'programmes' %}">Programmes</a>
                     <a class="navbar-brand" href="{% url 'inscriptions' %}">Inscriptions</a>
-                    <a class="navbar-brand" href="{% url 'admin:index' %}">Administration</a>
                 </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <form class="navbar-form navbar-right">
-                        <div class="input-group margin-bottom-sm">
-                            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                            <input class="form-control" type="text" placeholder="Courriel">
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                            <input class="form-control" type="password" placeholder="Mot de passe">
-                        </div>
-                        <button type="submit" class="btn btn-success" href="{% url 'endev' %}">Inscrivez-vous</button>
-                    </form>
+                <div id="navbar" class="navbar-right">
+                    <a class="navbar-brand" href="{% url 'admin:index' %}">Administration</a>
                 </div><!--/.navbar-collapse -->
             </div>
         </nav>
@@ -54,13 +43,14 @@
         <div class="jumbotron">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-sm-8">
                         <h1>Université virtuelle</h1>
                         <p>Apprendre à partir de n'importe où, n'importe quand, à votre rythme</p>
                         <p>Un projet en Python, exclusivement!</p>
-                        <p><a class="btn btn-success btn-lg" href="{% url 'accueil' %}" role="button">Accueil &raquo;</a></p>
+                        <p><a class="btn btn-success btn-lg" href="{% url 'accueil' %}" role="button">
+                            <span class="fa fa-home pull-left"></span>Accueil &raquo;</a></p>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-sm-4">
                         <div class="image">
                             <p><IMG SRC="{% static 'univ/img/univ.jpg' %}" ALT="Université" TITLE="Amphithéâtre"
                             height="200px" width="300px"></p>
