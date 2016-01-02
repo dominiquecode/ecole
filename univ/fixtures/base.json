@@ -1,270 +1,309 @@
 [
 {
+    "model": "univ.local",
     "pk": 1,
     "fields": {
         "nom": "A123"
-    },
-    "model": "univ.local"
+    }
 },
 {
+    "model": "univ.local",
     "pk": 2,
     "fields": {
         "nom": "B234"
-    },
-    "model": "univ.local"
+    }
 },
 {
+    "model": "univ.local",
     "pk": 3,
     "fields": {
         "nom": "C2345"
-    },
-    "model": "univ.local"
+    }
 },
 {
+    "model": "univ.local",
     "pk": 4,
     "fields": {
         "nom": "D234"
-    },
-    "model": "univ.local"
+    }
 },
 {
+    "model": "univ.local",
     "pk": 5,
     "fields": {
         "nom": "A543"
-    },
-    "model": "univ.local"
+    }
 },
 {
+    "model": "univ.local",
     "pk": 6,
     "fields": {
         "nom": "F654"
-    },
-    "model": "univ.local"
+    }
 },
 {
+    "model": "univ.programme",
     "pk": 1,
     "fields": {
         "nom": "Sciences g\u00e9n\u00e9rales",
-        "description": "Ce programme a saveur scientifique regroupe des cours de science g\u00e9n\u00e9raux. Il donne un vernis complet pour aborder ensuite une formation plus pointue dans un domaine scientifique, la recherche, les laboratoires et la recherche fondamentale.",
-        "code": "SCGEN"
-    },
-    "model": "univ.programme"
+        "code": "SCGEN",
+        "description": "Ce programme \u00e0 saveur scientifique regroupe des cours de science g\u00e9n\u00e9raux. Il donne un vernis complet pour aborder ensuite une formation plus pointue dans un domaine scientifique, la recherche, les laboratoires et la recherche fondamentale."
+    }
 },
 {
+    "model": "univ.programme",
     "pk": 2,
     "fields": {
         "nom": "Classique",
-        "description": "Formation classique g\u00e9n\u00e9rale. Ce programme est destin\u00e9 aux \u00e9tudiant-es sans projet de carri\u00e8re pr\u00e9cis. Il regroupe un ensemble de cours n\u00e9cessaires \u00e0 la bonne compr\u00e9hension de notre monde.\r\nLes \u00e9tudiant-es seront en mesure d'utiliser leurs nouvelles comp\u00e9tences dans tous les domaines de la connaissance humaine d'aujourd'hui.",
-        "code": "CLASS"
-    },
-    "model": "univ.programme"
+        "code": "CLASS",
+        "description": "Formation classique g\u00e9n\u00e9rale. Ce programme est destin\u00e9 aux \u00e9tudiant-es sans projet de carri\u00e8re pr\u00e9cis. Il regroupe un ensemble de cours n\u00e9cessaires \u00e0 la bonne compr\u00e9hension de notre monde.\r\nLes \u00e9tudiant-es seront en mesure d'utiliser leurs nouvelles comp\u00e9tences dans tous les domaines de la connaissance humaine d'aujourd'hui."
+    }
 },
 {
+    "model": "univ.programme",
+    "pk": 3,
+    "fields": {
+        "nom": "Histoire du monde",
+        "code": "HISMO",
+        "description": "Ce programme rassemble les connaissances actuelles sur l'\u00e9tat du monde contemporain. Les gradu\u00e9-es de ce programme auront les connaissances n\u00e9cessaires pour affronter les d\u00e9fis de notre monde actuel et se reposant sur une solide \u00e9valuation des faits et une m\u00e9thodologie ad\u00e9quate."
+    }
+},
+{
+    "model": "univ.professeur",
     "pk": 1,
     "fields": {
-        "local": 1,
         "nom": "Kalinka",
-        "code": "KAAL",
+        "prenom": "Alain",
         "date_naissance": "2015-12-08",
-        "prenom": "Alain"
-    },
-    "model": "univ.professeur"
+        "code": "KAAL",
+        "local": 1
+    }
 },
 {
+    "model": "univ.professeur",
     "pk": 2,
     "fields": {
-        "local": 3,
         "nom": "Ducas",
-        "code": "DUCPIE",
+        "prenom": "Pierre",
         "date_naissance": "2015-12-30",
-        "prenom": "Pierre"
-    },
-    "model": "univ.professeur"
+        "code": "DUCPIE",
+        "local": 3
+    }
 },
 {
+    "model": "univ.professeur",
     "pk": 3,
     "fields": {
-        "local": 3,
         "nom": "Lazarre",
-        "code": "LAZJE",
+        "prenom": "Jean",
         "date_naissance": "2015-12-30",
-        "prenom": "Jean"
-    },
-    "model": "univ.professeur"
+        "code": "LAZJE",
+        "local": 3
+    }
 },
 {
+    "model": "univ.professeur",
     "pk": 4,
     "fields": {
-        "local": 6,
         "nom": "Cornelius",
-        "code": "CORJER",
+        "prenom": "J\u00e9r\u00e9mie",
         "date_naissance": null,
-        "prenom": "J\u00e9r\u00e9mie"
-    },
-    "model": "univ.professeur"
+        "code": "CORJER",
+        "local": 6
+    }
 },
 {
+    "model": "univ.professeur",
     "pk": 5,
     "fields": {
-        "local": 5,
         "nom": "Francoeur",
-        "code": "FRAJEA",
+        "prenom": "Jeanne",
         "date_naissance": null,
-        "prenom": "Jeanne"
-    },
-    "model": "univ.professeur"
+        "code": "FRAJEA",
+        "local": 5
+    }
 },
 {
+    "model": "univ.cours",
     "pk": 1,
     "fields": {
-        "professeur": 5,
-        "programme": 1,
+        "titre": "Math\u00e9matiques 101",
         "code": "MAT101",
-        "titre": "Math\u00e9matiques 101"
-    },
-    "model": "univ.cours"
+        "professeur": 5,
+        "programme": 1
+    }
 },
 {
+    "model": "univ.cours",
     "pk": 2,
     "fields": {
-        "professeur": 4,
-        "programme": 2,
+        "titre": "Philosophie",
         "code": "PHI101",
-        "titre": "Philosophie"
-    },
-    "model": "univ.cours"
+        "professeur": 4,
+        "programme": 2
+    }
 },
 {
+    "model": "univ.cours",
     "pk": 3,
     "fields": {
-        "professeur": 3,
-        "programme": 1,
+        "titre": "G\u00e9ographie",
         "code": "GEO101",
-        "titre": "G\u00e9ographie"
-    },
-    "model": "univ.cours"
+        "professeur": 3,
+        "programme": 1
+    }
 },
 {
+    "model": "univ.cours",
     "pk": 4,
     "fields": {
-        "professeur": 2,
-        "programme": 1,
+        "titre": "Sciences naturelles",
         "code": "SCI101",
-        "titre": "Sciences naturelles"
-    },
-    "model": "univ.cours"
+        "professeur": 2,
+        "programme": 1
+    }
 },
 {
+    "model": "univ.cours",
     "pk": 5,
     "fields": {
-        "professeur": 1,
-        "programme": 2,
+        "titre": "\u00c9ducation physique",
         "code": "EDU101",
-        "titre": "\u00c9ducation physique"
-    },
-    "model": "univ.cours"
+        "professeur": 1,
+        "programme": 2
+    }
 },
 {
+    "model": "univ.cours",
+    "pk": 6,
+    "fields": {
+        "titre": "Histoire des sciences",
+        "code": "HISCI",
+        "professeur": 1,
+        "programme": 3
+    }
+},
+{
+    "model": "univ.cours",
+    "pk": 7,
+    "fields": {
+        "titre": "Histoire moderne",
+        "code": "HISAN",
+        "professeur": 2,
+        "programme": 3
+    }
+},
+{
+    "model": "univ.cours",
+    "pk": 8,
+    "fields": {
+        "titre": "L'\u00e9tat du monde",
+        "code": "ETAMON",
+        "professeur": 3,
+        "programme": 3
+    }
+},
+{
+    "model": "univ.etudiant",
     "pk": 1,
     "fields": {
         "nom": "Gautron",
-        "code": "GAUDO",
+        "prenom": "Dominique",
         "date_naissance": "1952-02-01",
-        "prenom": "Dominique"
-    },
-    "model": "univ.etudiant"
+        "code": "GAUDO"
+    }
 },
 {
+    "model": "univ.etudiant",
     "pk": 2,
     "fields": {
         "nom": "Leboss\u00e9",
-        "code": "LEBCA",
+        "prenom": "Catherine",
         "date_naissance": "1967-01-11",
-        "prenom": "Catherine"
-    },
-    "model": "univ.etudiant"
+        "code": "LEBCA"
+    }
 },
 {
+    "model": "univ.etudiant",
     "pk": 3,
     "fields": {
         "nom": "Leboss\u00e9-Gautron",
-        "code": "LEBMA",
+        "prenom": "Marie",
         "date_naissance": "1998-01-03",
-        "prenom": "Marie"
-    },
-    "model": "univ.etudiant"
+        "code": "LEBMA"
+    }
 },
 {
+    "model": "univ.etudiant",
     "pk": 4,
     "fields": {
         "nom": "Leboss\u00e9-Gautron",
-        "code": "LEBJA",
+        "prenom": "Jeanne",
         "date_naissance": "1995-05-17",
-        "prenom": "Jeanne"
-    },
-    "model": "univ.etudiant"
+        "code": "LEBJA"
+    }
 },
 {
+    "model": "univ.inscription",
     "pk": 1,
     "fields": {
-        "date_inscripion": "2015-12-29T17:39:53.224Z",
+        "cours": 1,
         "etudiants": 1,
-        "cours": 1
-    },
-    "model": "univ.inscription"
+        "date_inscripion": "2015-12-29T17:39:53.224Z"
+    }
 },
 {
+    "model": "univ.inscription",
     "pk": 2,
     "fields": {
-        "date_inscripion": "2015-12-29T17:35:19.550Z",
+        "cours": 1,
         "etudiants": 2,
-        "cours": 1
-    },
-    "model": "univ.inscription"
+        "date_inscripion": "2015-12-29T17:35:19.550Z"
+    }
 },
 {
+    "model": "univ.inscription",
     "pk": 3,
     "fields": {
-        "date_inscripion": "2015-12-29T17:36:08.172Z",
+        "cours": 2,
         "etudiants": 1,
-        "cours": 2
-    },
-    "model": "univ.inscription"
+        "date_inscripion": "2015-12-29T17:36:08.172Z"
+    }
 },
 {
+    "model": "univ.inscription",
     "pk": 4,
     "fields": {
-        "date_inscripion": "2015-12-31T00:00:10.218Z",
+        "cours": 5,
         "etudiants": 3,
-        "cours": 5
-    },
-    "model": "univ.inscription"
+        "date_inscripion": "2015-12-31T00:00:10.218Z"
+    }
 },
 {
+    "model": "univ.inscription",
     "pk": 5,
     "fields": {
-        "date_inscripion": "2015-12-31T00:00:23.191Z",
+        "cours": 5,
         "etudiants": 4,
-        "cours": 5
-    },
-    "model": "univ.inscription"
+        "date_inscripion": "2015-12-31T00:00:23.191Z"
+    }
 },
 {
+    "model": "univ.inscription",
     "pk": 6,
     "fields": {
-        "date_inscripion": "2015-12-31T00:00:29.186Z",
+        "cours": 5,
         "etudiants": 2,
-        "cours": 5
-    },
-    "model": "univ.inscription"
+        "date_inscripion": "2015-12-31T00:00:29.186Z"
+    }
 },
 {
+    "model": "univ.inscription",
     "pk": 7,
     "fields": {
-        "date_inscripion": "2015-12-31T00:00:34.842Z",
+        "cours": 5,
         "etudiants": 1,
-        "cours": 5
-    },
-    "model": "univ.inscription"
+        "date_inscripion": "2015-12-31T00:00:34.842Z"
+    }
 }
 ]
