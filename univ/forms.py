@@ -1,5 +1,5 @@
 from django import forms
-from .models import Programme
+from .models import Programme, Cours
 
 
 class InscriptionForm(forms.Form):
@@ -17,3 +17,8 @@ class ListeProgrammeForm(forms.Form):
                                                      widget=forms.RadioSelect)
 
 
+class ListeCoursForm(forms.Form):
+    choix_cours = Cours.objects.all()
+    liste_cours = forms.ModelMultipleChoiceField(choix_cours,
+                                                 label="Liste des cours",
+                                                 widget=forms.CheckboxSelectMultiple)

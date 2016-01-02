@@ -9,7 +9,6 @@
                 <form action="{% url "endev" %}" method="post">
                     {% csrf_token %}
                     {{ formulaire_inscription.as_p }}
-                    <input type="submit" class="btn btn-success btn-block" value="Confirmez les informations">
                 </form>
             </div>
             <div class="col-md-4">
@@ -17,13 +16,22 @@
                 <form action="{% url "endev" %}" method="post">
                     {% csrf_token %}
                     {{ formulaire_programme }}
-                    <input type="submit" class="btn btn-success btn-block" value="Confirmez le programme">
                 </form>
             </div>
             <div class="col-md-4">
               <h4>Sélectionnez les cours</h4>
-                <p><a class="btn btn-danger btn-block" href="{% url 'endev' %}" role="button">Confirmez les cours</a></p>
+                <form action="{% url "endev" %}" method="post">
+                    {% csrf_token %}
+                    {{ formulaire_cours }}
+                </form>
+
             </div>
+        </div>
+        <div class="row">
+            <p>
+                <a class="btn btn-danger" href="{% url 'inscription_confirmation' %}"
+                  role="button">Confirmez votre demande d'inscription</a>
+            </p>
         </div>
     </div>
 {% endblock %}
