@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'^inscriptions/confirmation$', views.inscription_confirmation, name="inscription_confirmation"),
     url(r'^endev$', views.endev, name="endev"),
     url(r'^vie_courante$', views.vie_courante, name="vie_courante"),
+    url(r'^coordonnees$', views.coordonnees, name="coordonnees"),
 
 ]

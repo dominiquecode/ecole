@@ -16,6 +16,10 @@
 footer {
     background-color: #f28419;
     padding: 0px 12px;
+    font-size: x-small;
 }
 
 
+.btn-success {
+    background-color: darkgreen;
+}

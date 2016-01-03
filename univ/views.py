@@ -61,3 +61,7 @@ def inscription_form(request):
 
 def inscription_confirmation(request):
     return render(request, "inscription_confirmation.html", {})
+
+
+def coordonnees(request):
+    return render(request, "coordonnees.html", {})
