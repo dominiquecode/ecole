@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block contenu %}
+    <div class="container">
+        <p><h3> Formulaire inscription </h3></p>
+        <div class="row">
+            <div class="col-md-4">
+                <p><h3><span class="fa fa-university"></span> Troisième étape</h3></p>
+                <p>Choisissez vos cours</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Sélectionnez un programme</h4>
+                <form action="{% url "inscription_confirmation" %}" method="post">
+                    {% csrf_token %}
+                    {{ formulaire_cours|crispy }}
+                    <input type="submit" value="Confirmez">
+                </form>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+        </div>
+        <div class="row">
+            <p>
+
+            </p>
+        </div>
+    </div>
+{% endblock %}
