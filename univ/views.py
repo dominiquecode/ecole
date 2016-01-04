@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from .models import Programme, Professeur, Cours
 from .forms import InscriptionForm, ListeProgrammeForm, ListeCoursForm
@@ -50,12 +51,8 @@ def inscription_form(request):
     # vérification de la méthode et des champs de formulaire
     if request.method == "POST":
         formulaire_inscription = InscriptionForm(request.POST)
-        formulaire_programme = ListeProgrammeForm(request.POST)
-        formulaire_cours = ListeProgrammeForm(request.POST)
-        if formulaire_inscription.is_valid() and \
-                formulaire_programme.is_valid() and \
-                formulaire_cours.is_valid():
-            return HttpResponseRedirect("/ins_prog_form/")
+        if formulaire_inscription.is_valid():
+            return HttpResponseRedirect(reverse("ins_prog_form"))
 
     else:
         formulaire_inscription = InscriptionForm(initial={"date_inscription": timezone.now(),
@@ -77,7 +74,7 @@ def inscription_programme_form(request):
     if request.method == "POST":
         formulaire_programme = ListeProgrammeForm(request.POST)
         if formulaire_programme.is_valid():
-            return HttpResponseRedirect("/ins_cours_form/")
+            return HttpResponseRedirect(reverse("ins_cours_form"))
 
     else:
         formulaire_programme = ListeProgrammeForm()
@@ -96,9 +93,9 @@ def inscription_cours_form(request):
     """
     # vérification de la méthode et des champs de formulaire
     if request.method == "POST":
-        formulaire_cours = ListeProgrammeForm(request.POST)
+        formulaire_cours = ListeCoursForm(request.POST)
         if formulaire_cours.is_valid():
-            return HttpResponseRedirect("/inscriptions_form/")
+            return HttpResponseRedirect(reverse("inscription_confirmation"))
 
     else:
         formulaire_cours = ListeCoursForm()
