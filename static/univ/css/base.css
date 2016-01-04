@@ -1,6 +1,12 @@
 .jumbotron {
     background-color: #f28419;
     padding-bottom: 0px;
+    color: #f7f7f7;
+}
+
+.jumbotron h1 {
+    font-family: "Roboto", "Lucida Grande", Verdana, Arial, sans-serif;
+    color: white;
 }
 
 .image {
@@ -10,6 +16,10 @@
 footer {
     background-color: #f28419;
     padding: 0px 12px;
+    font-size: x-small;
 }
 
 
+.btn-success {
+    background-color: darkgreen;
+}
