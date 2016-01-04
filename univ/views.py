@@ -107,8 +107,8 @@ def inscription_cours_form(request):
 
 
 def inscription_confirmation(request):
-    if request.method == "POST":
-        print(request.__dict__)
+    # if request.method == "POST":
+    #    print(request.__dict__)
 
     courriel = request.POST.get('courriel', '')
     date_inscription = request.POST.get("date_inscription", '')
