@@ -4,6 +4,7 @@ from .models import Programme, Professeur, Cours
 from .forms import InscriptionForm, ListeProgrammeForm, ListeCoursForm
 from django.utils import timezone
 
+
 # Create your views here.
 def acceuil(request):
     return render(request, "accueil.html", {})
@@ -26,15 +27,15 @@ def vie_courante(request):
 
 
 def organisation(request):
-    programmes = Programme.objects.all()
+    les_programmes = Programme.objects.all()
     professeurs = Professeur.objects.all()
     cours = Cours.objects.all()
-    context = {
-        "programmes": programmes,
-        "professeurs": professeurs,
-        "cours": cours,
-    }
-    return render(request, "organisation.html", context)
+
+    return render(request, "organisation.html",
+                  {"programmes": les_programmes,
+                   "professeurs": professeurs,
+                   "cours": cours, }
+                  )
 
 
 def inscription_form(request):
@@ -49,14 +50,14 @@ def inscription_form(request):
     else:
         formulaire_inscription = InscriptionForm(initial={"date_inscription": timezone.now()})
         formulaire_programme = ListeProgrammeForm()
-        formulaire_cours =ListeCoursForm()
+        formulaire_cours = ListeCoursForm()
 
+    # retourne les trois formulaires de la page
     return render(request,
                   "inscription_form.html",
                   {"formulaire_inscription": formulaire_inscription,
-                   "formulaire_programme":formulaire_programme,
-                   "formulaire_cours": formulaire_cours}
-                )
+                   "formulaire_programme": formulaire_programme,
+                   "formulaire_cours": formulaire_cours})
 
 
 def inscription_confirmation(request):

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block contenu %}
     <div class="container">
@@ -8,21 +9,21 @@
                 <p><h4>Données personnelles</h4></p>
                 <form action="{% url "endev" %}" method="post">
                     {% csrf_token %}
-                    {{ formulaire_inscription.as_p }}
+                    {{ formulaire_inscription|crispy }}
                 </form>
             </div>
             <div class="col-md-4">
                 <h4>Sélectionnez un programme</h4>
                 <form action="{% url "endev" %}" method="post">
                     {% csrf_token %}
-                    {{ formulaire_programme }}
+                    {{ formulaire_programme|crispy }}
                 </form>
             </div>
             <div class="col-md-4">
               <h4>Sélectionnez les cours</h4>
                 <form action="{% url "endev" %}" method="post">
                     {% csrf_token %}
-                    {{ formulaire_cours }}
+                    {{ formulaire_cours|crispy }}
                 </form>
 
             </div>
