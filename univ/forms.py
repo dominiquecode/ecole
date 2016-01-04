@@ -9,9 +9,9 @@ class InscriptionForm(forms.Form):
     c'est la première version.
     """
     nom = forms.CharField(label=" Nom  ",max_length=20)
-    prenom = forms.CharField(max_length=20)
+    prenom = forms.CharField(max_length=20, label="Prénom ")
     date_naissance = forms.DateField(label="Date de naissance ")
-    courriel = forms.EmailField()
+    courriel = forms.EmailField(label="Courriel ")
     date_inscription = forms.DateField(label="Date d'inscription ")
 
 

@@ -4,6 +4,7 @@ from .models import Programme, Professeur, Cours
 from .forms import InscriptionForm, ListeProgrammeForm, ListeCoursForm
 from django.utils import timezone
 
+
 # Create your views here.
 def acceuil(request):
     return render(request, "accueil.html", {})
@@ -38,7 +39,7 @@ def organisation(request):
 
 
 def inscription_form(request):
-    # vérification de la méthode et des champs de formulaire
+    # vérification de la méthode et des champs de formulairej
     if request.method == "POST":
         formulaire_inscription = InscriptionForm(request.POST)
         formulaire_programme = ListeProgrammeForm(request.POST)
@@ -60,8 +61,16 @@ def inscription_form(request):
 
 
 def inscription_confirmation(request):
-    return render(request, "inscription_confirmation.html", {})
+    nom = request.POST["nom"]
+    prenom = request.POST["prenom"]
+
+    context = {"nom": nom, "prenom": prenom}
+    return render(request, "inscription_confirmation.html", context)
 
 
 def coordonnees(request):
-    return render(request, "coordonnees.html", {})
+    courriel = request.POST["adresse_courriel"]
+    mdp = request.POST["mot_de_passe"]
+
+    context = {"courriel": courriel, "mdp": mdp}
+    return render(request, "coordonnees.html", context)
