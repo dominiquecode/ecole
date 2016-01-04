@@ -7,21 +7,22 @@
         <div class="row">
             <div class="col-md-4">
                 <p><h4>Données personnelles</h4></p>
-                <form action="{% url "endev" %}" method="post">
+                <form action="{% url "inscription_form" %}" method="post">
                     {% csrf_token %}
                     {{ formulaire_inscription|crispy }}
+                    <input type="submit" value="Confirmez">
                 </form>
             </div>
             <div class="col-md-4">
                 <h4>Sélectionnez un programme</h4>
-                <form action="{% url "endev" %}" method="post">
+                <form action="{% url "inscription_confirmation" %}" method="post">
                     {% csrf_token %}
                     {{ formulaire_programme|crispy }}
                 </form>
             </div>
             <div class="col-md-4">
               <h4>Sélectionnez les cours</h4>
-                <form action="{% url "endev" %}" method="post">
+                <form action="{% url "inscription_confirmation" %}" method="post">
                     {% csrf_token %}
                     {{ formulaire_cours|crispy }}
                 </form>
@@ -30,8 +31,7 @@
         </div>
         <div class="row">
             <p>
-                <a class="btn btn-success" href="{% url 'inscription_confirmation' %}"
-                  role="button"><span class="fa fa-check-square  pull-left"></span> Confirmez votre demande d'inscription</a>
+
             </p>
         </div>
     </div>
