@@ -51,6 +51,6 @@ class InscriptionProcess(forms.Form):
                                                      label="Liste des programmes",
                                                      widget=forms.RadioSelect)
     choix_cours = Cours.objects.all()
-    liste_cours = forms.ModelMultipleChoiceField(choix_cours,
-                                                 label="Liste des cours",
-                                                 widget=forms.CheckboxSelectMultiple)
+    #liste_cours = forms.ModelMultipleChoiceField(choix_cours,
+    #                                             label="Liste des cours",
+    #                                             widget=forms.CheckboxSelectMultiple)
