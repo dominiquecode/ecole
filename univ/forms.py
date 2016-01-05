@@ -15,6 +15,7 @@ class InscriptionForm(forms.Form):
     date_inscription = forms.DateField(label="Date d'inscription ")
 
 
+
 class ListeProgrammeForm(forms.Form):
     """
     le formulaire redonne la liste des programmes actifs dans l'application
@@ -33,6 +34,22 @@ class ListeCoursForm(forms.Form):
     Un seul champ utilisé dans le template pour obtenir une liste
     de case à cocher (choix multiple)
     """
+    choix_cours = Cours.objects.all()
+    liste_cours = forms.ModelMultipleChoiceField(choix_cours,
+                                                 label="Liste des cours",
+                                                 widget=forms.CheckboxSelectMultiple)
+
+
+class InscriptionProcess(forms.Form):
+    nom = forms.CharField(label=" Nom  ",max_length=20)
+    prenom = forms.CharField(max_length=20, label="Prénom ")
+    date_naissance = forms.DateField(label="Date de naissance ")
+    courriel = forms.EmailField(label="Courriel ")
+    date_inscription = forms.DateField(label="Date d'inscription ")
+    choix_programme = Programme.objects.all()
+    liste_programme = forms.ModelMultipleChoiceField(choix_programme,
+                                                     label="Liste des programmes",
+                                                     widget=forms.RadioSelect)
     choix_cours = Cours.objects.all()
     liste_cours = forms.ModelMultipleChoiceField(choix_cours,
                                                  label="Liste des cours",
