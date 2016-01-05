@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
+from django.utils import timezone
 from .models import Programme, Professeur, Cours
 from .forms import InscriptionForm, ListeProgrammeForm, ListeCoursForm
-from django.utils import timezone
+
 
 
 # Create your views here.
@@ -56,7 +57,10 @@ def inscription_form(request):
 
     else:
         formulaire_inscription = InscriptionForm(initial={"date_inscription": timezone.now(),
-                                                          "courriel": "admin@tradom.ca"})
+                                                          "courriel": "admin@tradom.ca",
+                                                          "nom": "Gautron",
+                                                          "prenom": "Dominqiue",
+                                                          "date_naissance": timezone.now()})
 
     # retourne les trois formulaires de la page
     return render(request, "ins_coordonnees_form.html",
@@ -111,7 +115,7 @@ def inscription_confirmation(request):
     #    print(request.__dict__)
 
     courriel = request.POST.get('courriel', '')
-    date_inscription = request.POST.get("date_inscription", '')
+    date_inscription = timezone.now()
 
     return render(request, "inscription_confirmation.html",
                   {"courriel": courriel,
