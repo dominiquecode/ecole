@@ -39,27 +39,6 @@ def organisation(request):
                    "cours": cours, }
                   )
 
-"""
-def inscription_form(request):
-    # vérification de la méthode et des champs de formulaire
-    if request.method == "POST":
-        formulaire_inscription = InscriptionForm(request.POST)
-        if formulaire_inscription.is_valid():
-            return HttpResponseRedirect(reverse("ins_prog_form"))
-
-    else:
-        formulaire_inscription = InscriptionForm(initial={"date_inscription": timezone.now(),
-                                                          "courriel": "admin@tradom.ca",
-                                                          "nom": "Gautron",
-                                                          "prenom": "Dominqiue",
-                                                          "date_naissance": timezone.now()})
-
-    # retourne les trois formulaires de la page
-    return render(request, "ins_coordonnees_form.html",
-                  {"formulaire_inscription": formulaire_inscription})
-
-"""""
-
 
 def inscription_form(request):
     if request.method == "POST":
@@ -86,14 +65,45 @@ def inscription_confirmation(request):
         courriel = request.POST.get('courriel')
         date_inscription = timezone.now()
 
+        # retrouver le programme choisi
+        prog_pk = request.POST.get("liste_programme")
+        prog = Programme.objects.get(pk=prog_pk).identifiant
+        cours = Cours.objects.filter(programme_id=prog_pk)
+
+        # retrouver les cours choisis
+
+
         return render(request, "inscription_confirmation.html",
                           {"nom": nom,
                            "prenom": prenom,
                            "date_naissance": date_naissance,
                            "courriel": courriel,
-                           "date_inscription": date_inscription})
+                           "date_inscription": date_inscription,
+                           "prog": prog,
+                           "cours": cours})
 
 
+
+"""
+def inscription_form(request):
+    # vérification de la méthode et des champs de formulaire
+    if request.method == "POST":
+        formulaire_inscription = InscriptionForm(request.POST)
+        if formulaire_inscription.is_valid():
+            return HttpResponseRedirect(reverse("ins_prog_form"))
+
+    else:
+        formulaire_inscription = InscriptionForm(initial={"date_inscription": timezone.now(),
+                                                          "courriel": "admin@tradom.ca",
+                                                          "nom": "Gautron",
+                                                          "prenom": "Dominqiue",
+                                                          "date_naissance": timezone.now()})
+
+    # retourne les trois formulaires de la page
+    return render(request, "ins_coordonnees_form.html",
+                  {"formulaire_inscription": formulaire_inscription})
+
+"""""
 
 """""
 def inscription_programme_form(request):
