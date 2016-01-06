@@ -5,18 +5,18 @@
     <div class="container">
         <p><h2> Formulaire inscription </h2></p>
         <div class="row">
-            <div class="col-md-4">
-                <p><h3><span class="fa fa-user"></span> Remplissez les champs</h3></p>
-                <p>Envoyez vos données personnelles</p>
-                 <form action="{% url "inscription_confirmation" %}" method="post">
+            <form action="{% url "inscription_confirmation" %}" method="post">
+                <div class="col-md-4">
+                    <p><h3><span class="fa fa-user"></span> Données personnelles </h3></p>
                     {% csrf_token %}
                     {{ formulaire_inscription|crispy }}
+                </div>
+                <div class="col-md-4">
+                    <p><h3><span class="fa fa-university"></span> Choix de programme</h3></p>
+                    {{ formulaire_programme|crispy }}
                     <input type="submit" value="Confirmez">
-                </form>
-            </div>
-            <div class="col-md-4">
-
-            </div>
+                </div>
+            </form>
             <div class="col-md-4">
 
             </div>

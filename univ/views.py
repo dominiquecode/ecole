@@ -42,19 +42,22 @@ def organisation(request):
 
 def inscription_form(request):
     if request.method == "POST":
-        frm_ins = InscriptionProcess(request.POST)
-        if frm_ins.is_valid():
+        frm_ins = InscriptionForm(request.POST)
+        frm_prog = ListeProgrammeForm(request.POST)
+        if frm_ins.is_valid() and frm_prog.is_valid():
             return HttpResponseRedirect(reverse("inscription_confirmation"))
 
     else:
-        frm_ins = InscriptionProcess(initial={"date_inscription": timezone.now(),
+        frm_ins = InscriptionForm(initial={"date_inscription": timezone.now(),
                                                           "courriel": "admin@tradom.ca",
                                                           "nom": "Gautron",
                                                           "prenom": "Dominique",
                                                           "date_naissance": timezone.now()})
+        frm_prog = ListeProgrammeForm()
 
     return render(request, "ins_coordonnees_form.html",
-                  {"formulaire_inscription": frm_ins})
+                  {"formulaire_inscription": frm_ins,
+                   "formulaire_programme": frm_prog})
 
 
 def inscription_confirmation(request):
