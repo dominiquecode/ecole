@@ -1,5 +1,12 @@
 from django import forms
-from .models import Programme, Cours
+from django.forms import ModelForm
+from .models import Programme, Cours, Etudiant
+
+
+class EtudiantForm(ModelForm):
+    class Meta:
+        model = Etudiant
+        fields = ["nom", "prenom", "code", "cours"]
 
 
 class InscriptionForm(forms.Form):

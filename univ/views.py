@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.utils import timezone
 from .models import Programme, Professeur, Cours
-from .forms import InscriptionForm, ListeProgrammeForm, ListeCoursForm, InscriptionProcess
+from .forms import InscriptionForm, ListeProgrammeForm, EtudiantForm
 
 
 
@@ -42,19 +42,22 @@ def organisation(request):
 
 def inscription_form(request):
     if request.method == "POST":
-        frm_ins = InscriptionProcess(request.POST)
-        if frm_ins.is_valid():
+        frm_ins = InscriptionForm(request.POST)
+        frm_prog = ListeProgrammeForm(request.POST)
+        if frm_ins.is_valid() and frm_prog.is_valid():
             return HttpResponseRedirect(reverse("inscription_confirmation"))
 
     else:
-        frm_ins = InscriptionProcess(initial={"date_inscription": timezone.now(),
+        frm_ins = InscriptionForm(initial={"date_inscription": timezone.now(),
                                                           "courriel": "admin@tradom.ca",
                                                           "nom": "Gautron",
                                                           "prenom": "Dominique",
                                                           "date_naissance": timezone.now()})
+        frm_prog = ListeProgrammeForm()
 
     return render(request, "ins_coordonnees_form.html",
-                  {"formulaire_inscription": frm_ins})
+                  {"formulaire_inscription": frm_ins,
+                   "formulaire_programme": frm_prog})
 
 
 def inscription_confirmation(request):
@@ -82,6 +85,16 @@ def inscription_confirmation(request):
                            "prog": prog,
                            "cours": cours})
 
+
+def etudiants(request):
+    if request.method == "POST":
+        frm_etudiants = EtudiantForm()
+        if frm_etudiants.is_valid():
+            return HttpResponseRedirect(reverse("accueil"))
+    else:
+        frm_etudiants = EtudiantForm()
+
+    return render(request, "etudiants.html", {"formulaire_etudiant": frm_etudiants})
 
 
 """
