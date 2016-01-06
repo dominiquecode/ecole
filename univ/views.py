@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.utils import timezone
 from .models import Programme, Professeur, Cours
-from .forms import InscriptionForm, ListeProgrammeForm, ListeCoursForm, InscriptionProcess
+from .forms import InscriptionForm, ListeProgrammeForm, EtudiantForm
 
 
 
@@ -82,6 +82,16 @@ def inscription_confirmation(request):
                            "prog": prog,
                            "cours": cours})
 
+
+def etudiants(request):
+    if request.method == "POST":
+        frm_etudiants = EtudiantForm()
+        if frm_etudiants.is_valid():
+            return HttpResponseRedirect(reverse("accueil"))
+    else:
+        frm_etudiants = EtudiantForm()
+
+    return render(request, "etudiants.html", {"formulaire_etudiant": frm_etudiants})
 
 
 """
