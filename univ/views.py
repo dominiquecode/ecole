@@ -6,7 +6,6 @@ from .models import Programme, Professeur, Cours, Etudiant
 from .forms import InscriptionForm, ListeProgrammeForm, EtudiantForm
 
 
-
 # Create your views here.
 def acceuil(request):
     return render(request, "accueil.html", {})

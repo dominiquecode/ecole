@@ -1,0 +1,22 @@
+{# le jumbotron standard de bootstrap #}
+{% load static %}
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h1><span><img src="{% static 'univ/img/logo.jpg' %}" alt="Logo"></span>  Université virtuelle</h1>
+                <p>Apprendre à partir de n'importe où, n'importe quand, à votre rythme</p>
+                <p>Un projet en Python, exclusivement!</p>
+                <p><a class="btn btn-success btn-lg" href="{% url 'accueil' %}" role="button">
+                    <span class="fa fa-home pull-left"></span>Accueil &raquo;</a></p>
+            </div>
+            <div class="col-sm-4">
+                <div class="image">
+                    <p><IMG SRC="{% static 'univ/img/univ.jpg' %}" ALT="Université" TITLE="Amphithéâtre"
+                                    height="300px" width="500px"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
