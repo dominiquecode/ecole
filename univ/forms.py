@@ -22,7 +22,6 @@ class InscriptionForm(forms.Form):
     date_inscription = forms.DateField(label="Date d'inscription ")
 
 
-
 class ListeProgrammeForm(forms.Form):
     """
     le formulaire redonne la liste des programmes actifs dans l'application

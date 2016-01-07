@@ -10,7 +10,6 @@
                     <p>Bonjour <strong>{{ prenom }} {{ nom }}</strong></p>
                     <p>Votre inscription au programme {{ prog }} <br>a bien été envoyée à l'administration le {{ date_inscription }}</p>
                     <p>Votre liste de cours : </p>
-                    <p>
                         <ul>
                             {% for c in cours %}
                                 <div class="checkbox">
@@ -19,7 +18,6 @@
                             {% endfor %}
 
                         </ul>
-                    </p>
                     <hr>
                     <p>Vous recevrez une confirmation écrite par courriel à l'adresse : {{ courriel }}</p>
                     <p>Nous vous souhaitons une bonne formation!</p>
