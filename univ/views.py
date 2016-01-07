@@ -71,10 +71,8 @@ def inscription_confirmation(request):
         # retrouver le programme choisi
         prog_pk = request.POST.get("liste_programme")
         prog = Programme.objects.get(pk=prog_pk).identifiant
-        cours = Cours.objects.filter(programme_id=prog_pk)
-
         # retrouver les cours choisis
-
+        cours = Cours.objects.filter(programme_id=prog_pk)
 
         return render(request, "inscription_confirmation.html",
                           {"nom": nom,
@@ -158,7 +156,6 @@ def inscription_cours_form(request):
                   {"formulaire_cours": formulaire_cours})
 
 """""
-
 
 
 def coordonnees(request):
