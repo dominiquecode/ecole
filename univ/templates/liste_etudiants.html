@@ -4,13 +4,14 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <h2> la liste des étudiants </h2>
+          <h2><span class="fa fa-users"></span> la liste des étudiants </h2>
+            <hr>
             <ul>
             {% for etud in liste_etudiants %}
                 <li>{{ etud.nom }} {{ etud.prenom }} {{ etud.date_naissance }}</li>
                 <ul>
                 {% for cours in etud.liste_cours %}
-                    <li>{{ cours.titre }}</li>
+                    <li>{{ cours.titre }} (Programme : {{ cours.programme }})</li>
                 {% endfor %}
                 </ul>
                 <hr>
