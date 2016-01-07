@@ -19,6 +19,14 @@ footer {
     font-size: x-small;
 }
 
+.footer-main {
+    background-color: InfoText;
+    color: gray;
+}
+
+.footer-main-bas {
+    color: gray;
+}
 
 .btn-success {
     background-color: darkgreen;
