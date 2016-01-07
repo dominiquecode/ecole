@@ -5,11 +5,11 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-sm-4">
-          <h2>Choisir son avenir!</h2>
-            {% crsf token %}
+        <div class="col-sm-3">
+          <h2></h2>
+            {% csrf_token %}
             {{ formulaire_etudiant|crispy }}
-          <p><a class="btn btn-success" href="{% url 'programmes' %}" role="button">Allons-y ... &raquo;</a></p>
+          <p><a class="btn btn-success" href="{% url 'accueil' %}" role="button">Allons-y ... &raquo;</a></p>
         </div>
         <div class="col-sm-4">
 

@@ -6,7 +6,7 @@ from .models import Programme, Cours, Etudiant
 class EtudiantForm(ModelForm):
     class Meta:
         model = Etudiant
-        fields = ["nom", "prenom", "code", "cours"]
+        fields = ["nom", "prenom", "code"]
 
 
 class InscriptionForm(forms.Form):

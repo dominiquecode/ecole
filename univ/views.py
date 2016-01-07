@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.utils import timezone
-from .models import Programme, Professeur, Cours
+from .models import Programme, Professeur, Cours, Etudiant
 from .forms import InscriptionForm, ListeProgrammeForm, EtudiantForm
 
 
@@ -95,6 +95,11 @@ def etudiants(request):
         frm_etudiants = EtudiantForm()
 
     return render(request, "etudiants.html", {"formulaire_etudiant": frm_etudiants})
+
+
+def liste_etudiants(request):
+    liste = Etudiant.objects.all()
+    return render(request, "liste_etudiants.html", {"liste_etudiants": liste})
 
 
 """
