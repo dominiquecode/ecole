@@ -20,14 +20,13 @@ footer {
 }
 
 .footer-main {
-    background-color: InfoText;
+    background-color: #282828;
     color: gray;
 }
 
 .footer-main ul {
     color: cornflowerblue;
 }
-
 .footer-main-bas {
     color: gray;
 }
