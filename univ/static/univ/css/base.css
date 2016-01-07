@@ -14,13 +14,12 @@
 }
 
 footer {
-    background-color: #f28419;
+    background-color: #282828;
     padding: 0px 12px;
     font-size: x-small;
 }
 
 .footer-main {
-    background-color: #282828;
     color: gray;
 }
 
