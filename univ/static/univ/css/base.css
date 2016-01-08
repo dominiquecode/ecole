@@ -14,11 +14,21 @@
 }
 
 footer {
-    background-color: #f28419;
+    background-color: #282828;
     padding: 0px 12px;
     font-size: x-small;
 }
 
+.footer-main {
+    color: gray;
+}
+
+.footer-main ul {
+    color: cornflowerblue;
+}
+.footer-main-bas {
+    color: gray;
+}
 
 .btn-success {
     background-color: darkgreen;

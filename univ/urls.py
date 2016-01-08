@@ -17,6 +17,7 @@ Including another URLconf
 from django.conf.urls import url
 from univ import views
 
+
 urlpatterns = [
     url(r'^$', views.acceuil, name='accueil'),
     url(r'^programmes$', views.programmes, name="programmes"),
@@ -31,5 +32,7 @@ urlpatterns = [
     url(r'^etudiants/liste$', views.liste_etudiants, name="liste_etudiants"),
     url(r'^vie_courante$', views.vie_courante, name="vie_courante"),
     url(r'^coordonnees$', views.coordonnees, name="coordonnees"),
-
+    url(r'^etudiant/(?P<pk>\d+)/$', views.etudiant, name="etudiant"),
 ]
+
+

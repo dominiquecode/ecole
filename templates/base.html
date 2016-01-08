@@ -1,0 +1,23 @@
+{% load staticfiles %}
+
+<html>
+    <header>
+    {% include 'header.html' %}
+    </header>
+
+    <body>
+        {% include 'navbar.html' %}
+
+        {% include 'jumbotron.html' %}
+
+        {% block contenu %}
+
+        {% endblock %}
+
+        {% include 'espace.html' %}
+    </body>
+
+    <footer>
+        {% include 'footer_fat.html' %}
+    </footer>
+</html>

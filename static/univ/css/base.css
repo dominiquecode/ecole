@@ -19,6 +19,18 @@ footer {
     font-size: x-small;
 }
 
+.footer-main {
+    background-color: InfoText;
+    color: gray;
+}
+
+.footer-main ul {
+    color: cornflowerblue;
+}
+
+.footer-main-bas {
+    color: gray;
+}
 
 .btn-success {
     background-color: darkgreen;

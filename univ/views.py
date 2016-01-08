@@ -6,18 +6,17 @@ from .models import Programme, Professeur, Cours, Etudiant
 from .forms import InscriptionForm, ListeProgrammeForm, EtudiantForm
 
 
-
 # Create your views here.
 def acceuil(request):
     return render(request, "accueil.html", {})
 
 
 def inscription(request):
-    return render(request, "inscriptions.html", {})
+    return render(request, "univ/inscriptions.html", {})
 
 
 def programmes(request):
-    return render(request, "programmes.html", {})
+    return render(request, "univ/programmes.html", {})
 
 
 def endev(request):
@@ -25,7 +24,7 @@ def endev(request):
 
 
 def vie_courante(request):
-    return render(request, "vie_courante.html", {})
+    return render(request, "univ/vie_courante.html", {})
 
 
 def organisation(request):
@@ -33,7 +32,7 @@ def organisation(request):
     professeurs = Professeur.objects.all()
     cours = Cours.objects.all()
 
-    return render(request, "organisation.html",
+    return render(request, "univ/organisation.html",
                   {"programmes": les_programmes,
                    "professeurs": professeurs,
                    "cours": cours, }
@@ -55,7 +54,7 @@ def inscription_form(request):
                                                           "date_naissance": timezone.now()})
         frm_prog = ListeProgrammeForm()
 
-    return render(request, "ins_coordonnees_form.html",
+    return render(request, "univ/ins_form.html",
                   {"formulaire_inscription": frm_ins,
                    "formulaire_programme": frm_prog})
 
@@ -71,19 +70,22 @@ def inscription_confirmation(request):
         # retrouver le programme choisi
         prog_pk = request.POST.get("liste_programme")
         prog = Programme.objects.get(pk=prog_pk).identifiant
+        # retrouver les cours choisis
         cours = Cours.objects.filter(programme_id=prog_pk)
 
-        # retrouver les cours choisis
-
-
-        return render(request, "inscription_confirmation.html",
-                          {"nom": nom,
+        return render(request, "univ/ins_confirmation.html",
+                      {"nom": nom,
                            "prenom": prenom,
                            "date_naissance": date_naissance,
                            "courriel": courriel,
                            "date_inscription": date_inscription,
                            "prog": prog,
                            "cours": cours})
+
+
+def etudiant(request, pk):
+    etu = Etudiant.objects.get(pk=pk)
+    return render(request, "univ/etudiant.html", {"etudiant": etu})
 
 
 def etudiants(request):
@@ -94,12 +96,12 @@ def etudiants(request):
     else:
         frm_etudiants = EtudiantForm()
 
-    return render(request, "etudiants.html", {"formulaire_etudiant": frm_etudiants})
+    return render(request, "univ/etudiants.html", {"formulaire_etudiant": frm_etudiants})
 
 
 def liste_etudiants(request):
     liste = Etudiant.objects.all()
-    return render(request, "liste_etudiants.html", {"liste_etudiants": liste})
+    return render(request, "univ/etu_liste.html", {"liste_etudiants": liste})
 
 
 """
@@ -118,7 +120,7 @@ def inscription_form(request):
                                                           "date_naissance": timezone.now()})
 
     # retourne les trois formulaires de la page
-    return render(request, "ins_coordonnees_form.html",
+    return render(request, "ins_form.html",
                   {"formulaire_inscription": formulaire_inscription})
 
 """""
@@ -160,6 +162,5 @@ def inscription_cours_form(request):
 """""
 
 
-
 def coordonnees(request):
-    return render(request, "coordonnees.html", {})
+    return render(request, "univ/coordonnees.html", {})

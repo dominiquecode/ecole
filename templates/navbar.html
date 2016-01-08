@@ -1,0 +1,14 @@
+{# la barre de navigation standard #}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Accueil</a>
+            <a class="navbar-brand" href="{% url 'programmes' %}">Programmes</a>
+            <a class="navbar-brand" href="{% url 'inscriptions' %}">Inscriptions</a>
+            <a class="navbar-brand" href="{% url 'liste_etudiants' %}">Étudiants</a>
+        </div>
+        <div id="navbar" class="navbar-right">
+            <a class="navbar-brand" href="{% url 'admin:index' %}">Administration</a>
+        </div>
+    </div>
+</nav>
