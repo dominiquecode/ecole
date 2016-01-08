@@ -1,23 +1,31 @@
 {% extends 'base.html' %}
 
 {% block contenu %}
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <h2><span class="fa fa-users"></span> la liste des étudiants </h2>
-            <hr>
-            <ul>
-            {% for etud in liste_etudiants %}
-                <li>{{ etud.nom }} {{ etud.prenom }} {{ etud.date_naissance }}</li>
-                <ul>
-                {% for cours in etud.liste_cours %}
-                    <li>{{ cours.titre }} (Programme : {{ cours.programme }})</li>
-                {% endfor %}
-                </ul>
+    <div class="container" xmlns="http://www.w3.org/1999/html">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2><span class="fa fa-users"></span> la liste des étudiants </h2>
                 <hr>
-            {% endfor %}
-            </ul>
+                <form>
+                <ul>
+                    {% for etud in liste_etudiants %}
+                        <li>
+                            {{ etud.nom }} {{ etud.prenom }} {{ etud.date_naissance }}
+                            <span>
+                                <input type="submit" formaction="{% url 'etudiant' etud.pk %}"
+                                         class="btn btn-success btn-xs" name="Submit" value="Informations">
+                            </span>
+                        </li>
+                        <ul>
+                        {% for cours in etud.liste_cours %}
+                            <li>{{ cours.titre }} (Programme : {{ cours.programme }})</li>
+                        {% endfor %}
+                        </ul>
+                        <hr>
+                    {% endfor %}
+                </ul>
+                </form>
+            </div>
         </div>
-      </div>
     </div>
 {% endblock %}

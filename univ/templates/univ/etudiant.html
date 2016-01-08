@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block contenu %}
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2><span class="fa fa-info-circle"></span> Informations générales </h2>
+            <hr>
+            <h4>{{ etudiant.nom }} {{ etudiant.prenom }}</h4> (né-e le : {{ etudiant.date_naissance }})
+            <hr>
+            <div class="col-lg-2">
+            <h5>Programme</h5>
+            <ul>
+                {{ etudiant.inscription_set }}
+            </ul>
+            </div>
+            <div class="col-lg-4">
+            <h5>Les cours de la session</h5>
+            <ul>
+                {% for cours in etudiant.liste_cours %}
+                    <li>{{ cours.titre }} (Programme : {{ cours.programme }})</li>
+                {% endfor %}
+            </ul>
+            </div>
+            <div class="col-lg-3">
+                <h5>Le professeur principal</h5>
+                <ul>
+                    {{ etudiant }} prof principal
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h5>Association étudiante</h5>
+                <ul>
+                    {{ etudiant }} Association
+                </ul>
+            </div>
+            <hr>
+        </div>
+      </div>
+    </div>
+{% endblock %}

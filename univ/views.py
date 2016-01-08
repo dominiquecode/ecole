@@ -83,6 +83,11 @@ def inscription_confirmation(request):
                            "cours": cours})
 
 
+def etudiant(request, pk):
+    etu = Etudiant.objects.get(pk=pk)
+    return render(request, "univ/etudiant.html", {"etudiant": etu})
+
+
 def etudiants(request):
     if request.method == "POST":
         frm_etudiants = EtudiantForm()
